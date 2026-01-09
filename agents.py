@@ -280,7 +280,7 @@ Return ONLY the JSON array, no other text."""
         
         return state
     
-def process(self, job_description: str, resumes: List[Dict[str, Any]]) -> Dict[str, Any]:
+   async def process(self, job_description: str, resumes: List[Dict[str, Any]]) -> Dict[str, Any]:
         """Process job description and resumes through the workflow"""
         initial_state = {
             "job_description": job_description,
