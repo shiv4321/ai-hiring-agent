@@ -31,6 +31,12 @@ async def root():
     html_path = os.path.join(os.path.dirname(__file__), "static", "index.html")
     with open(html_path, "r", encoding="utf-8") as f:
         return f.read()
+        
+@app.post("/api/analyze")
+async def analyze_candidates(
+    job_description: str = Form(...),
+    resumes: List[UploadFile] = File(...)
+):
 
 async def analyze_candidates(
     job_description: str = Form(...),
