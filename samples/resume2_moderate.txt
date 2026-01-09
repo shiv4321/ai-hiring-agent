@@ -1,0 +1,54 @@
+SARAH JOHNSON
+Full-Stack Developer
+sarah.johnson@email.com | (555) 987-6543
+
+ABOUT ME
+Passionate developer with 4 years of experience in web development. I love creating beautiful and functional applications using modern technologies.
+
+SKILLS
+React, JavaScript, Node.js, Express, MongoDB, SQL, HTML, CSS, Git, AWS, Docker, Python, Django, Vue.js, Angular, TypeScript, GraphQL, REST APIs, Agile, Scrum, CI/CD, Kubernetes, Redis, PostgreSQL
+
+WORK EXPERIENCE
+
+Full-Stack Developer
+Digital Agency Co. | 2021 - Present
+• Work on various client projects using React and Node.js
+• Develop responsive web applications
+• Collaborate with team members on feature development
+• Write clean and maintainable code
+• Participate in code reviews
+• Use Git for version control
+• Deploy applications to AWS
+
+Web Developer
+Local Tech Startup | 2019 - 2021
+• Built web applications using JavaScript frameworks
+• Created RESTful APIs
+• Worked with databases (MongoDB and PostgreSQL)
+• Implemented user authentication systems
+• Fixed bugs and added new features
+• Attended daily standup meetings
+
+Junior Developer (Internship)
+Software Company | Summer 2019
+• Assisted senior developers with coding tasks
+• Learned React and Node.js
+• Helped with testing and bug fixes
+
+EDUCATION
+Bachelor's in Information Technology
+State University | 2015-2019
+
+PROJECTS
+• Personal portfolio website using React
+• E-commerce site with shopping cart functionality
+• Weather app using APIs
+• Todo list application with backend
+• Blog platform with user authentication
+
+ADDITIONAL INFORMATION
+• Fast learner and team player
+• Strong problem-solving skills
+• Detail-oriented
+• Excellent communication skills
+• Available to start immediately

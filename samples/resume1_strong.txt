@@ -1,0 +1,54 @@
+JOHN SMITH
+Senior Software Engineer
+Email: john.smith@email.com | Phone: (555) 123-4567
+LinkedIn: linkedin.com/in/johnsmith | GitHub: github.com/johnsmith
+
+PROFESSIONAL SUMMARY
+Results-driven Full-Stack Developer with 7 years of experience building scalable web applications. Specialized in React, Node.js, and cloud infrastructure. Led development of products serving 500K+ users with 99.9% uptime.
+
+TECHNICAL SKILLS
+Frontend: React.js, TypeScript, Redux, Next.js, HTML5, CSS3, Tailwind
+Backend: Node.js, Express, Python, Django, RESTful APIs, GraphQL
+Databases: PostgreSQL, MongoDB, Redis, MySQL
+Cloud & DevOps: AWS (EC2, S3, Lambda, RDS), Docker, Kubernetes, CI/CD (GitHub Actions)
+Tools: Git, Jest, Cypress, Webpack, Agile/Scrum
+
+PROFESSIONAL EXPERIENCE
+
+Senior Full-Stack Developer | TechCorp Inc. | San Francisco, CA
+January 2021 - Present
+• Led team of 4 developers in rebuilding e-commerce platform using React and Node.js, resulting in 40% faster page load times and 25% increase in conversion rates
+• Architected and implemented microservices backend handling 10M+ API requests daily with 99.9% uptime
+• Designed and deployed CI/CD pipeline reducing deployment time from 2 hours to 15 minutes
+• Mentored 3 junior developers, conducting code reviews and pair programming sessions
+• Optimized database queries reducing average response time from 800ms to 120ms
+
+Full-Stack Developer | StartupXYZ | Remote
+March 2018 - December 2020
+• Built RESTful APIs using Node.js and Express serving 100K+ daily active users
+• Developed responsive React applications with Redux for state management
+• Implemented JWT authentication and role-based access control systems
+• Integrated Stripe payment processing handling $2M+ in transactions
+• Wrote comprehensive test suites achieving 85% code coverage using Jest and Cypress
+• Collaborated with product team in Agile sprints, consistently delivering features on time
+
+Junior Developer | WebSolutions Ltd. | Boston, MA
+June 2017 - February 2018
+• Developed and maintained client websites using JavaScript, React, and Node.js
+• Fixed bugs and implemented new features for 20+ client projects
+• Participated in daily standups and sprint planning meetings
+• Learned best practices for version control using Git and GitHub
+
+EDUCATION
+Bachelor of Science in Computer Science | MIT | 2013-2017
+GPA: 3.8/4.0 | Dean's List all semesters
+
+PROJECTS & ACHIEVEMENTS
+• Open-source contributor to React ecosystem (1,200+ GitHub stars on personal projects)
+• Built real-time chat application using WebSockets serving 50K+ concurrent users
+• Awarded "Developer of the Year" at TechCorp 2022
+• Speaker at ReactConf 2023 on "Optimizing React Performance"
+
+CERTIFICATIONS
+• AWS Certified Solutions Architect - Associate (2022)
+• MongoDB Certified Developer (2021)

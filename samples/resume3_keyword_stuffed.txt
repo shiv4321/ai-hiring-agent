@@ -1,0 +1,48 @@
+MICHAEL CHEN
+Expert Full-Stack Developer & Software Engineer
+michael.chen@example.com | (555) 456-7890
+
+PROFESSIONAL SUMMARY
+Highly skilled and experienced Full-Stack Developer with expertise in React, Node.js, JavaScript, TypeScript, Python, Java, C++, Ruby, PHP, Go, Rust, Swift, Kotlin, Scala, Perl, R, MATLAB, Assembly, Objective-C, and more. Expert in all aspects of software development, cloud computing, machine learning, AI, blockchain, IoT, and emerging technologies.
+
+CORE COMPETENCIES
+Frontend: React.js, Angular, Vue.js, Svelte, Next.js, Gatsby, jQuery, Bootstrap, Material-UI, Ant Design, Semantic UI, Foundation, Bulma, Tailwind CSS, SASS, LESS, Styled Components
+Backend: Node.js, Express, Django, Flask, Spring Boot, Ruby on Rails, Laravel, ASP.NET, FastAPI, NestJS
+Databases: MySQL, PostgreSQL, MongoDB, Redis, Cassandra, DynamoDB, Oracle, SQL Server, Firebase, Neo4j, CouchDB, ElasticSearch
+Cloud: AWS, Azure, GCP, Heroku, DigitalOcean, Linode, IBM Cloud, Oracle Cloud
+DevOps: Docker, Kubernetes, Jenkins, CircleCI, Travis CI, GitLab CI, GitHub Actions, Terraform, Ansible, Chef, Puppet
+Other: GraphQL, REST APIs, Microservices, Serverless, Machine Learning, TensorFlow, PyTorch, Blockchain, Ethereum, Solidity, WebSockets, gRPC, Apache Kafka, RabbitMQ, NGINX, Apache, Linux, Windows, MacOS
+
+PROFESSIONAL EXPERIENCE
+
+Senior Full-Stack Developer | Tech Company | 2020 - Present
+• Developed applications using React, Node.js, and other technologies
+• Worked with databases and cloud platforms
+• Implemented microservices and APIs
+• Used Docker and Kubernetes
+• Applied best practices and design patterns
+• Collaborated with team members
+• Delivered projects on time
+
+Full-Stack Developer | Software Firm | 2018 - 2020
+• Built web applications with modern frameworks
+• Created backend services and APIs
+• Managed databases and cloud infrastructure
+• Participated in agile development process
+• Wrote code and documentation
+
+EDUCATION
+Bachelor's Degree in Computer Science
+University | 2014-2018
+
+CERTIFICATIONS & TRAINING
+AWS Certified, Azure Certified, Google Cloud Certified, Docker Certified, Kubernetes Certified, MongoDB Certified, Oracle Certified, Cisco Certified, Red Hat Certified, Scrum Master Certified, PMP Certified, ITIL Certified
+
+ACHIEVEMENTS
+• Successfully delivered multiple projects
+• Improved system performance
+• Reduced costs
+• Enhanced user experience
+• Won employee of the month several times
+• Received positive feedback from clients
+• Contributed to team success

@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Hiring Agent</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            opacity: 0.9;
+            font-size: 16px;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .form-section {
+            margin-bottom: 30px;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #333;
+            font-size: 14px;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 14px;
+            font-family: inherit;
+            resize: vertical;
+            min-height: 150px;
+            transition: border-color 0.3s;
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .file-upload {
+            border: 2px dashed #e0e0e0;
+            border-radius: 8px;
+            padding: 30px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            background: #f9f9f9;
+        }
+
+        .file-upload:hover {
+            border-color: #667eea;
+            background: #f0f0ff;
+        }
+
+        .file-upload input {
+            display: none;
+        }
+
+        .file-upload-label {
+            display: block;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .file-upload-label strong {
+            color: #667eea;
+        }
+
+        .file-list {
+            margin-top: 15px;
+            padding: 0;
+            list-style: none;
+        }
+
+        .file-list li {
+            padding: 8px 12px;
+            background: #f0f0ff;
+            border-radius: 6px;
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-primary:active {
+            transform: translateY(0);
+        }
+
+        .btn-primary:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .loading.active {
+            display: block;
+        }
+
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .results {
+            display: none;
+            margin-top: 40px;
+        }
+
+        .results.active {
+            display: block;
+        }
+
+        .results h2 {
+            color: #333;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #667eea;
+        }
+
+        .job-analysis {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .job-analysis h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+
+        .job-analysis ul {
+            margin-left: 20px;
+        }
+
+        .job-analysis li {
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        .candidate-card {
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 20px;
+            transition: border-color 0.3s;
+        }
+
+        .candidate-card:hover {
+            border-color: #667eea;
+        }
+
+        .candidate-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .candidate-name {
+            font-size: 22px;
+            font-weight: 700;
+            color: #333;
+        }
+
+        .candidate-score {
+            font-size: 36px;
+            font-weight: 700;
+            color: #667eea;
+        }
+
+        .score-label {
+            font-size: 12px;
+            color: #999;
+            display: block;
+            margin-top: -5px;
+        }
+
+        .score-breakdown {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .score-item {
+            background: #f9f9f9;
+            padding: 12px;
+            border-radius: 6px;
+            text-align: center;
+        }
+
+        .score-item-label {
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+        .score-item-value {
+            font-size: 20px;
+            font-weight: 700;
+            color: #667eea;
+        }
+
+        .section {
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .section-content {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .section-content ul {
+            margin-left: 20px;
+        }
+
+        .section-content li {
+            margin-bottom: 8px;
+        }
+
+        .error {
+            background: #fee;
+            border: 1px solid #fcc;
+            color: #c33;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🤖 AI Hiring Agent</h1>
+            <p>Automate candidate evaluation with AI-powered analysis</p>
+        </header>
+
+        <div class="content">
+            <form id="analysisForm">
+                <div class="form-section">
+                    <label for="jobDescription">Job Description</label>
+                    <textarea 
+                        id="jobDescription" 
+                        name="job_description" 
+                        placeholder="Paste the full job description here..."
+                        required
+                    ></textarea>
+                </div>
+
+                <div class="form-section">
+                    <label>Candidate Resumes (PDF or Text)</label>
+                    <div class="file-upload" id="fileUpload">
+                        <input 
+                            type="file" 
+                            id="resumes" 
+                            name="resumes" 
+                            multiple 
+                            accept=".pdf,.txt"
+                        >
+                        <label for="resumes" class="file-upload-label">
+                            <strong>Click to upload</strong> or drag and drop<br>
+                            <small>PDF or TXT files (max 10 files)</small>
+                        </label>
+                    </div>
+                    <ul class="file-list" id="fileList"></ul>
+                </div>
+
+                <button type="submit" class="btn-primary" id="submitBtn">
+                    Analyze Candidates
+                </button>
+            </form>
+
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p>Analyzing candidates... This may take a moment.</p>
+            </div>
+
+            <div class="results" id="results"></div>
+        </div>
+    </div>
+
+    <script>
+        const form = document.getElementById('analysisForm');
+        const fileInput = document.getElementById('resumes');
+        const fileList = document.getElementById('fileList');
+        const loading = document.getElementById('loading');
+        const results = document.getElementById('results');
+        const submitBtn = document.getElementById('submitBtn');
+
+        // File upload handling
+        fileInput.addEventListener('change', function() {
+            fileList.innerHTML = '';
+            for (let file of this.files) {
+                const li = document.createElement('li');
+                li.textContent = `${file.name} (${(file.size / 1024).toFixed(1)} KB)`;
+                fileList.appendChild(li);
+            }
+        });
+
+        // Form submission
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(form);
+            const jobDescription = formData.get('job_description');
+            const resumes = fileInput.files;
+
+            if (!jobDescription || resumes.length === 0) {
+                alert('Please provide both job description and at least one resume');
+                return;
+            }
+
+            // Show loading
+            loading.classList.add('active');
+            results.classList.remove('active');
+            submitBtn.disabled = true;
+
+            try {
+                const response = await fetch('/api/analyze', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                if (!response.ok) {
+                    throw new Error('Analysis failed');
+                }
+
+                const data = await response.json();
+                displayResults(data);
+            } catch (error) {
+                results.innerHTML = `<div class="error">Error: ${error.message}</div>`;
+                results.classList.add('active');
+            } finally {
+                loading.classList.remove('active');
+                submitBtn.disabled = false;
+            }
+        });
+
+        function displayResults(data) {
+            let html = '<h2>Analysis Results</h2>';
+
+            // Job Analysis
+            if (data.job_analysis && !data.job_analysis.error) {
+                html += `
+                    <div class="job-analysis">
+                        <h3>Job Requirements</h3>
+                        <p><strong>Title:</strong> ${data.job_analysis.title || 'N/A'}</p>
+                        <p><strong>Experience Required:</strong> ${data.job_analysis.experience_required || 'N/A'} years</p>
+                        ${data.job_analysis.required_skills && data.job_analysis.required_skills.length > 0 ? `
+                            <p><strong>Required Skills:</strong></p>
+                            <ul>
+                                ${data.job_analysis.required_skills.map(s => `<li>${s}</li>`).join('')}
+                            </ul>
+                        ` : ''}
+                    </div>
+                `;
+            }
+
+            // Candidates
+            if (data.candidates && data.candidates.length > 0) {
+                html += '<h2>Candidate Evaluations</h2>';
+                
+                data.candidates.forEach((candidate, index) => {
+                    if (candidate.error) {
+                        html += `
+                            <div class="candidate-card">
+                                <div class="error">
+                                    <strong>${candidate.filename || 'Unknown'}</strong>: ${candidate.error}
+                                </div>
+                            </div>
+                        `;
+                        return;
+                    }
+
+                    const breakdown = candidate.breakdown || {};
+                    
+                    html += `
+                        <div class="candidate-card">
+                            <div class="candidate-header">
+                                <div>
+                                    <div class="candidate-name">${candidate.name || 'Unknown'}</div>
+                                    <small style="color: #999;">${candidate.email || ''}</small>
+                                </div>
+                                <div style="text-align: right;">
+                                    <div class="candidate-score">${candidate.score || 0}</div>
+                                    <span class="score-label">out of 100</span>
+                                </div>
+                            </div>
+
+                            ${breakdown.experience !== undefined ? `
+                                <div class="score-breakdown">
+                                    <div class="score-item">
+                                        <div class="score-item-label">Experience</div>
+                                        <div class="score-item-value">${breakdown.experience}/30</div>
+                                    </div>
+                                    <div class="score-item">
+                                        <div class="score-item-label">Skills</div>
+                                        <div class="score-item-value">${breakdown.skills}/30</div>
+                                    </div>
+                                    <div class="score-item">
+                                        <div class="score-item-label">Education</div>
+                                        <div class="score-item-value">${breakdown.education}/20</div>
+                                    </div>
+                                    <div class="score-item">
+                                        <div class="score-item-label">Overall Fit</div>
+                                        <div class="score-item-value">${breakdown.overall_fit}/20</div>
+                                    </div>
+                                </div>
+                            ` : ''}
+
+                            ${candidate.strengths && candidate.strengths.length > 0 ? `
+                                <div class="section">
+                                    <div class="section-title">✅ Strengths</div>
+                                    <div class="section-content">
+                                        <ul>
+                                            ${candidate.strengths.map(s => `<li>${s}</li>`).join('')}
+                                        </ul>
+                                    </div>
+                                </div>
+                            ` : ''}
+
+                            ${candidate.gaps && candidate.gaps.length > 0 ? `
+                                <div class="section">
+                                    <div class="section-title">⚠️ Knowledge Gaps</div>
+                                    <div class="section-content">
+                                        <ul>
+                                            ${candidate.gaps.map(g => `<li>${g}</li>`).join('')}
+                                        </ul>
+                                    </div>
+                                </div>
+                            ` : ''}
+
+                            ${candidate.red_flags && candidate.red_flags.length > 0 ? `
+                                <div class="section">
+                                    <div class="section-title">🚩 Red Flags</div>
+                                    <div class="section-content">
+                                        <ul>
+                                            ${candidate.red_flags.map(f => `<li>${f}</li>`).join('')}
+                                        </ul>
+                                    </div>
+                                </div>
+                            ` : ''}
+
+                            ${candidate.reasoning ? `
+                                <div class="section">
+                                    <div class="section-title">💭 Reasoning</div>
+                                    <div class="section-content">${candidate.reasoning}</div>
+                                </div>
+                            ` : ''}
+
+                            ${candidate.interview_questions && candidate.interview_questions.length > 0 ? `
+                                <div class="section">
+                                    <div class="section-title">❓ Interview Questions</div>
+                                    <div class="section-content">
+                                        <ul>
+                                            ${candidate.interview_questions.map(q => `<li>${q}</li>`).join('')}
+                                        </ul>
+                                    </div>
+                                </div>
+                            ` : ''}
+                        </div>
+                    `;
+                });
+            }
+
+            results.innerHTML = html;
+            results.classList.add('active');
+        }
+    </script>
+</body>
+</html>
