@@ -59,7 +59,7 @@ async def analyze_candidates(
             })
         
         # Run the agent workflow
-        result = await workflow.process(job_description, resume_data)
+        result = workflow.process(job_description, resume_data)
         
         return JSONResponse(content=result)
     
