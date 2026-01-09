@@ -207,9 +207,7 @@ Candidate Resume:
 Name: {resume.get('name', 'Unknown')}
 Experience: {resume.get('experience_years', 'N/A')} years
 Skills: {', '.join(resume.get('skills', [])[:10])}
-Experience Details: {' | '.join(resume.get('experience', [])[:3])}
-Education: {', '.join(resume.get('education', []))}
-
+Experience Details: {' | '.join([str(e) if isinstance(e, dict) else e for e in resume.get('experience', [])[:3]])}Education: {', '.join(resume.get('education', []))}
 IMPORTANT: Look for concrete examples and achievements, not just keyword lists. 
 Penalize vague claims without supporting details.
 
