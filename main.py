@@ -32,7 +32,6 @@ async def root():
     with open(html_path, "r", encoding="utf-8") as f:
         return f.read()
 
-@app.post("/api/analyze")
 async def analyze_candidates(
     job_description: str = Form(...),
     resumes: List[UploadFile] = File(...)
@@ -64,6 +63,9 @@ async def analyze_candidates(
         return JSONResponse(content=result)
     
     except Exception as e:
+        print(f"ERROR: {str(e)}")
+        import traceback
+        traceback.print_exc()
         return JSONResponse(
             status_code=500,
             content={"error": str(e)}
