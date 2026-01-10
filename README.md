@@ -166,4 +166,18 @@ Sample job description and resumes are included in the `/samples` directory for 
 - No authentication or user management
 - No persistent storage
 
+## Some Screenshots
+
+<img width="1080" height="606" alt="image" src="https://github.com/user-attachments/assets/966ec751-5a33-4c40-8a23-6976caac13cf" />
+
+<img width="1077" height="540" alt="image" src="https://github.com/user-attachments/assets/05f17470-42a9-442e-a4ad-5ade900d06bc" /> 
+
+<img width="1082" height="678" alt="image" src="https://github.com/user-attachments/assets/7c4cd1d3-23f6-433f-98d4-2fc488a8a622" />
+
+<img width="960" height="591" alt="image" src="https://github.com/user-attachments/assets/4b3b984a-318c-4a27-b953-03a9c6c0172e" />
+
+## Demo Video: 
+
+https://drive.google.com/file/d/1XI2fNWPDEVQw9TDyHrF0BL5cLyrtIu4m/view?usp=drive_link
+
 
