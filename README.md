@@ -161,7 +161,7 @@ Sample job description and resumes are included in the `/samples` directory for 
 
 ## Limitations & Assumptions
 - PDF parsing is basic (no OCR for images)
-- Handles up to 10 resumes at once (⚠️ Since, the web app is deployed on render's free tier : it has a limit of 512MB RAM so currently it only processes one at time.)
+- Handles up to 10 resumes at once (⚠️ Since, the web app is deployed on render's free tier : it has a limit of 512MB RAM so currently try processesing one or two at time.)
 - Assumes resumes are in English
 - No authentication or user management
 - No persistent storage
