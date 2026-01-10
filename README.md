@@ -1,5 +1,8 @@
 # AI Hiring Agent for Small Teams
 🔗 Live Demo:[ https://ai-hiring-agent.onrender.com/](url)
+
+⚠️ *Note:* If the link does not open correctly when clicked, please copy and paste it into a new browser tab.
+
 ## Overview
 An AI-powered hiring assistant that automates candidate evaluation by analyzing resumes against job descriptions. Built with FastAPI backend and vanilla JavaScript frontend.
 
