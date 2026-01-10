@@ -62,7 +62,7 @@ The system uses a multi-agent workflow orchestrated by LangGraph:
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
+git clone <(https://github.com/shiv4321/ai-hiring-agent)>
 cd ai-hiring-agent
 ```
 
