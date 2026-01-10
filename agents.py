@@ -206,9 +206,9 @@ Job Requirements:
 Candidate Resume:
 Name: {resume.get('name', 'Unknown')}
 Experience: {resume.get('experience_years', 'N/A')} years
-Skills: {', '.join(resume.get('skills', [])[:10])}
-Experience Details: {' | '.join([str(e) if isinstance(e, dict) else e for e in resume.get('experience', [])[:3]])}Education: {', '.join(resume.get('education', []))}
-IMPORTANT: Look for concrete examples and achievements, not just keyword lists. 
+Skills: {', '.join([str(s) if isinstance(s, dict) else s for s in resume.get('skills', [])[:10]])}
+Experience Details: {' | '.join([str(e) if isinstance(e, dict) else e for e in resume.get('experience', [])[:3]])}
+Education: {', '.join([str(e) if isinstance(e, dict) else e for e in resume.get('education', [])])}IMPORTANT: Look for concrete examples and achievements, not just keyword lists. 
 Penalize vague claims without supporting details.
 
 Return ONLY the JSON object, no other text."""
