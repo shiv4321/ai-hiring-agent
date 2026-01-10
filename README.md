@@ -20,6 +20,10 @@ An AI-powered hiring assistant that automates candidate evaluation by analyzing 
 The system uses a multi-agent workflow orchestrated by LangGraph:
 
 1. **Resume Parser Agent**: Extracts structured information from resumes
+
+<img width="954" height="290" alt="image" src="https://github.com/user-attachments/assets/3855ecca-85ac-4b9b-aab6-3bd1675bde82" />
+
+
 2. **Job Analyzer Agent**: Parses job requirements and identifies key criteria
 3. **Evaluator Agent**: Scores candidates based on alignment with job requirements
 4. **Question Generator Agent**: Creates targeted interview questions
@@ -73,7 +77,7 @@ uvicorn main:app --reload
 
 5. Open browser:
 ```
-http://localhost:8000
+https://ai-hiring-agent.onrender.com/
 ```
 
 ## API Documentation
@@ -142,11 +146,6 @@ Sample job description and resumes are included in the `/samples` directory for 
 
 ## Deployment
 
-### Vercel (Recommended)
-1. Install Vercel CLI: `npm i -g vercel`
-2. Run: `vercel`
-3. Follow prompts
-
 ### Render
 1. Create new Web Service
 2. Connect repository
@@ -155,21 +154,9 @@ Sample job description and resumes are included in the `/samples` directory for 
 
 ## Limitations & Assumptions
 - PDF parsing is basic (no OCR for images)
-- Handles up to 10 resumes at once
+- Handles up to 10 resumes at once (⚠️ Since, the web app is deployed on render's free tier : it has a limit of 512MB RAM so currently it only processes one at time.)
 - Assumes resumes are in English
 - No authentication or user management
 - No persistent storage
 
-## Time Investment
-Approximately 10 hours spent on:
-- Agent design and implementation (4h)
-- FastAPI backend (3h)
-- Frontend and integration (2h)
-- Testing and documentation (1h)
 
-## Future Enhancements (Not Implemented)
-- Async processing for large batches
-- Advanced PDF parsing with OCR
-- Multi-language support
-- Database persistence
-- User authentication
