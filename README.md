@@ -23,10 +23,17 @@ The system uses a multi-agent workflow orchestrated by LangGraph:
 
 <img width="954" height="290" alt="image" src="https://github.com/user-attachments/assets/3855ecca-85ac-4b9b-aab6-3bd1675bde82" />
 
-
 2. **Job Analyzer Agent**: Parses job requirements and identifies key criteria
+
+<img width="865" height="254" alt="image" src="https://github.com/user-attachments/assets/087d52b7-7809-493d-89cc-3fa88bda415d" />
+
 3. **Evaluator Agent**: Scores candidates based on alignment with job requirements
+
+<img width="750" height="151" alt="image" src="https://github.com/user-attachments/assets/8b859fba-67cd-4d60-896c-b54d630ef04b" />
+
 4. **Question Generator Agent**: Creates targeted interview questions
+
+<img width="713" height="146" alt="image" src="https://github.com/user-attachments/assets/fe3ad5f7-238a-4292-947c-2052571d39a7" />
 
 **Scoring Methodology**:
 - Experience Match (0-30 points): Years and relevance of experience
